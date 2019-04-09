@@ -4,22 +4,25 @@ USE museum;
 
 CREATE TABLE material(
 	id_material INT PRIMARY KEY AUTO_INCREMENT,
-    material_name VARCHAR(100)
+    material_name VARCHAR(100) UNIQUE
 );
 
 CREATE TABLE technique(
 	id_technique INT PRIMARY KEY AUTO_INCREMENT,
-    technique_name VARCHAR(100)
+    technique_name VARCHAR(100) UNIQUE
 );
 
 CREATE TABLE hall(
-id_hall INT PRIMARY KEY AUTO_INCREMENT,
-hall_name VARCHAR(100));
+	id_hall INT PRIMARY KEY AUTO_INCREMENT,
+	hall_name VARCHAR(100) UNIQUE
+);
 
 CREATE TABLE author(
-id_author INT PRIMARY KEY AUTO_INCREMENT,
-FIRSTNAME VARCHAR(100),
-LASTNAME VARCHAR(100));
+	id_author INT PRIMARY KEY AUTO_INCREMENT,
+	FIRSTNAME VARCHAR(100),
+	LASTNAME VARCHAR(100),
+    CONSTRAINT UNIQUE(FIRSTNAME,LASTNAME)
+    );
 
 CREATE TABLE exhibit(
 id_exhibit INT PRIMARY KEY AUTO_INCREMENT,
@@ -34,15 +37,15 @@ exhibit_name VARCHAR(100),
  );
 
 CREATE TABLE author_exhibit(
-id_exhibit INT,
-id_author INT,
-PRIMARY KEY (id_exhibit,id_author),
-FOREIGN KEY (id_exhibit) REFERENCES exhibit(id_exhibit),
-FOREIGN KEY (id_author) REFERENCES author(id_author));
+	id_exhibit INT,
+	id_author INT,
+	PRIMARY KEY (id_exhibit,id_author),
+	FOREIGN KEY (id_exhibit) REFERENCES exhibit(id_exhibit),
+	FOREIGN KEY (id_author) REFERENCES author(id_author));
 
 CREATE TABLE excursions(
 	id_excursion INT PRIMARY KEY AUTO_INCREMENT,
-	excursion_name varchar(100)
+	excursion_name varchar(100) UNIQUE
 );
 
 CREATE TABLE guide_position(
