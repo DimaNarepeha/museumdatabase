@@ -33,7 +33,9 @@ VALUES("Tom","Eagleeye"),
 INSERT INTO exhibit(id_material,id_technique,id_hall,id_author,exhibit_name)
 VALUES(1,3,1,2,"Eagle"),
 (3,1,2,3,"Rain"),
-(1,2,1,1,"Batman");
+(1,2,1,1,"Batman"),
+(3,2,2,3,"Pacman"),
+(1,3,1,1,"Statue of liberty");
 
 SELECT * FROM technique;
 SELECT * FROM material;
