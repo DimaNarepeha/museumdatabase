@@ -47,7 +47,7 @@ CREATE TABLE excursions(
 
 CREATE TABLE guide_position(
    id_guide_position INT PRIMARY KEY AUTO_INCREMENT,
-   position_name varchar(100)
+   position_name varchar(100) UNIQUE
 );
 
 create table guide(
