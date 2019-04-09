@@ -67,8 +67,8 @@ CREATE TABLE schedules(
 	id_schedule int primary key AUTO_INCREMENT,
 	id_excursion int,
     id_guide int,
-    time_start DATE,
-    time_end DATE,
+    time_start DATETIME,
+    time_end DATETIME,
     FOREIGN KEY (id_excursion) REFERENCES excursions(id_excursion),
 	FOREIGN KEY (id_guide) REFERENCES guide(id_guide)
 ); 
