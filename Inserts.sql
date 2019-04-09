@@ -22,12 +22,14 @@ VALUES(1,2,'2019-08-01 09:00:00','2019-08-01 12:00:00'),
 
 --select for check if enyone is free from 2019-08-01 13:25:00 to 13:28:00
 
+SET @start_time:='2019-08-01 13:25:00';
+SET @end_time:='2019-08-01 13:28:00';
 SELECT * 
 FROM schedules
-WHERE time_start   BETWEEN '2019-08-01 13:25:00' AND '2019-08-01 13:28:00'
-OR time_end  BETWEEN '2019-08-01 13:25:00' AND '2019-08-01 13:28:00'
-AND  '2019-08-01 13:25:00'  BETWEEN time_start AND time_end
-OR   '2019-08-01 13:28:00'  BETWEEN time_start AND time_end;
+WHERE time_start   BETWEEN @start_time AND @end_time
+OR time_end  BETWEEN @start_time AND @end_time
+AND  @start_time  BETWEEN time_start AND time_end
+OR   @end_time  BETWEEN time_start AND time_end;
 
 --LEFT SIDE
 
