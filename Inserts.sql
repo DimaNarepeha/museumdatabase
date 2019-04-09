@@ -53,15 +53,20 @@ VALUES("Tom","Eagleeye"),
 ("Ralph","Rainbow"),
 ("Jack","Smith");
 
-INSERT INTO exhibit(id_material,id_technique,id_hall,id_author,exhibit_name)
-VALUES(1,3,1,2,"Eagle"),
-(3,1,2,3,"Rain"),
-(1,2,1,1,"Batman"),
-(3,2,2,3,"Pacman"),
-(1,3,1,1,"Statue of liberty");
+INSERT INTO exhibit(id_material,id_technique,id_hall,exhibit_name)
+VALUES(1,3,1,"Eagle"),
+(3,1,2,"Rain"),
+(1,2,1,"Batman"),
+(3,2,2,"Pacman"),
+(1,3,1,"Statue of liberty");
 
+INSERT INTO author_exhibit(id_exhibit,id_author)
+VALUES(1,2),
+(3,1),
+(2,3);
 SELECT * FROM technique;
 SELECT * FROM material;
 SELECT * FROM hall;
 SELECT * FROM author;
 SELECT * FROM exhibit;
+SELECT * FROM author_exhibit;
