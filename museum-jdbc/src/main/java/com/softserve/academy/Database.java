@@ -18,7 +18,6 @@ public class Database {
         try {
             connectionToDatabase = DriverManager.getConnection(url, "sql2287510", "wE7%rD9!");
             //NOT original connectionToDatabase = DriverManager.getConnection(url, "root", "q1w2e3r4t5y6");
-            System.out.println(!connectionToDatabase.isClosed());
         } catch (SQLException | CJCommunicationsException e) {
             e.printStackTrace();
         }
