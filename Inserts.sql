@@ -1,4 +1,4 @@
---RIGHT SIDE
+/*--RIGHT SIDE*/
 INSERT INTO guide_position(position_name)
 VALUES("chief"),("helper"),("intern");
 
@@ -20,7 +20,7 @@ VALUES(1,2,'2019-08-01 09:00:00','2019-08-01 12:00:00'),
 (3,2,'2019-08-01 13:00:00','2019-08-01 13:30:00'),
 (4,1,'2019-08-01 14:00:00','2019-08-01 14:30:00');
 
---select for check if enyone is free from 2019-08-01 13:25:00 to 13:28:00
+/*--select for check if enyone is free from 2019-08-01 13:25:00 to 13:28:00*/
 
 SET @start_time:='2019-08-01 13:25:00';
 SET @end_time:='2019-08-01 13:28:00';
@@ -31,7 +31,7 @@ OR time_end  BETWEEN @start_time AND @end_time
 AND  @start_time  BETWEEN time_start AND time_end
 OR   @end_time  BETWEEN time_start AND time_end;
 
---LEFT SIDE
+/*--LEFT SIDE*/
 
 INSERT INTO technique(technique_name)
 VALUES("professional"),
@@ -64,6 +64,9 @@ INSERT INTO author_exhibit(id_exhibit,id_author)
 VALUES(1,2),
 (3,1),
 (2,3);
+
+insert into exhibit_guide(id_guide,id_exhibit)
+values(1,5),(2,4),(3,3),(4,2),(5,1);
 SELECT * FROM technique;
 SELECT * FROM material;
 SELECT * FROM hall;
