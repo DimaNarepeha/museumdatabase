@@ -4,23 +4,23 @@ USE museum;
 
 CREATE TABLE material(
 	id_material INT PRIMARY KEY AUTO_INCREMENT,
-    material_name VARCHAR(100) UNIQUE
+    material_name VARCHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE technique(
 	id_technique INT PRIMARY KEY AUTO_INCREMENT,
-    technique_name VARCHAR(100) UNIQUE
+    technique_name VARCHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE hall(
 	id_hall INT PRIMARY KEY AUTO_INCREMENT,
-	hall_name VARCHAR(100) UNIQUE
+	hall_name VARCHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE author(
 	id_author INT PRIMARY KEY AUTO_INCREMENT,
-	FIRSTNAME VARCHAR(100),
-	LASTNAME VARCHAR(100),
+	FIRSTNAME VARCHAR(100) NOT NULL,
+	LASTNAME VARCHAR(100) NOT NULL,
     CONSTRAINT UNIQUE(FIRSTNAME,LASTNAME)
     );
 
@@ -29,7 +29,7 @@ id_exhibit INT PRIMARY KEY AUTO_INCREMENT,
 id_material INT,
 id_technique INT,
 id_hall INT ,
-exhibit_name VARCHAR(100),
+exhibit_name VARCHAR(100) NOT NULL,
  FOREIGN KEY (id_material) REFERENCES material(id_material),
  FOREIGN KEY (id_technique) REFERENCES technique(id_technique),
  FOREIGN KEY (id_hall) REFERENCES hall(id_hall)
@@ -44,19 +44,19 @@ CREATE TABLE author_exhibit(
 
 CREATE TABLE excursions(
 	id_excursion INT PRIMARY KEY AUTO_INCREMENT,
-	excursion_name varchar(100) UNIQUE
+	excursion_name varchar(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE guide_position(
    id_guide_position INT PRIMARY KEY AUTO_INCREMENT,
-   position_name varchar(100) UNIQUE
+   position_name varchar(100) NOT NULL UNIQUE
 );
 
 create table guide(
 	id_guide  INT PRIMARY KEY AUTO_INCREMENT,
     id_position int,
-	firstname VARCHAR(100),
-    lastname VARCHAR(100),
+	firstname VARCHAR(100) NOT NULL,
+    lastname VARCHAR(100) NOT NULL,
 	FOREIGN KEY (id_position) REFERENCES guide_position(id_guide_position)
 );
 
@@ -66,12 +66,18 @@ CREATE TABLE schedules(
 	id_schedule int primary key AUTO_INCREMENT,
 	id_excursion int,
     id_guide int,
-    time_start DATETIME,
-    time_end DATETIME,
+    time_start DATETIME NOT NULL,
+    time_end DATETIME NOT NULL,
     FOREIGN KEY (id_excursion) REFERENCES excursions(id_excursion),
 	FOREIGN KEY (id_guide) REFERENCES guide(id_guide)
 ); 
 
-
+CREATE TABLE exhibit_guide(
+	id_guide INT,
+	id_exhibit INT,
+	PRIMARY KEY (id_guide,id_exhibit),
+	FOREIGN KEY (id_exhibit) REFERENCES exhibit(id_exhibit),
+	FOREIGN KEY (id_guide) REFERENCES guide(id_guide)
+);
 
 
