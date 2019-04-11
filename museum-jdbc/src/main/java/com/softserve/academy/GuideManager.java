@@ -28,7 +28,7 @@ public class GuideManager {
                 );
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Database fail");
         }
     }
 
@@ -42,7 +42,7 @@ public class GuideManager {
             }
             resultSet.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Database fail");
         }
     }
 
@@ -61,7 +61,7 @@ public class GuideManager {
             }
             resultSet.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Database fail");
         }
     }
 
@@ -75,7 +75,7 @@ public class GuideManager {
             }
             resultSet.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Database fail");
         }
     }
 
@@ -102,7 +102,7 @@ public class GuideManager {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Database fail");
         }
     }
 
@@ -311,7 +311,7 @@ public class GuideManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    
+
     }
 
 }
