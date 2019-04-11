@@ -8,7 +8,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * This class represents DAO
+ */
 public class GuideManager {
+    /**
+     * method to print Guide from a database
+     */
     public static void printGuide() {
         Connection conn = Database.getInstance().getConnection();
         String query = "SELECT id_guide, firstname,lastname,position_name  FROM guide g join guide_position p on " +
@@ -33,6 +39,9 @@ public class GuideManager {
         }
     }
 
+    /**
+     * method to print Positions
+     */
     public static void printPositions() {
         try (PreparedStatement selectFromHalls = Database.getInstance().getConnection().prepareStatement("SELECT * FROM guide_position")) {
             ResultSet resultSet = selectFromHalls.executeQuery();
@@ -47,6 +56,9 @@ public class GuideManager {
         }
     }
 
+    /**
+     * method to print Schedule
+     */
     public static void printSchedule() {
         try (PreparedStatement selectFromHalls =
                      Database.getInstance().getConnection().prepareStatement("SELECT " +
@@ -66,6 +78,9 @@ public class GuideManager {
         }
     }
 
+    /**
+     * method to print Excursions
+     */
     public static void printExcursions() {
         try (PreparedStatement selectFromHalls = Database.getInstance().getConnection().prepareStatement("SELECT * FROM excursions")) {
             ResultSet resultSet = selectFromHalls.executeQuery();
@@ -80,7 +95,9 @@ public class GuideManager {
         }
     }
 
-
+    /**
+     * method to add Guide
+     */
     public static void addGuide(BufferedReader bufferedReader) {
         try (PreparedStatement insertToGuide = Database.getInstance()
                 .getConnection()
@@ -106,6 +123,9 @@ public class GuideManager {
         }
     }
 
+    /**
+     * method to add Position
+     */
     public static void addPosition(BufferedReader bufferedReader) {
 
         try (PreparedStatement insertToPosition = Database.getInstance()
@@ -126,11 +146,14 @@ public class GuideManager {
         }
     }
 
+    /**
+     * method to update Positions
+     */
     public static void updatePosition(BufferedReader bufferedReader) {
         try (PreparedStatement updateGuide = Database.getInstance()
                 .getConnection()
                 .prepareStatement("UPDATE guide_position SET position_name = ?  WHERE id_guide_position=?")
-        ){
+        ) {
             System.out.println("===================UPDATE Position====================");
             printPositions();
             System.out.println("Enter position id for update:");
@@ -146,7 +169,7 @@ public class GuideManager {
                 System.out.println("Nothing was updated");
             }
 
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             System.out.println("Database fail");
@@ -154,6 +177,9 @@ public class GuideManager {
 
     }
 
+    /**
+     * method to update Guides
+     */
     public static void updateGuide(BufferedReader bufferedReader) {
 
         try (PreparedStatement updateGuide = Database.getInstance()
@@ -191,15 +217,18 @@ public class GuideManager {
 
     }
 
+    /**
+     * method to delete Duides
+     */
     public static void deleteGuide(BufferedReader bufferedReader) {
 
         System.out.println("===================Delete Guide====================");
         try (
 
-             PreparedStatement deleteGuide = Database.getInstance()
-                     .getConnection()
-                     .prepareStatement(" DELETE FROM guide\n" +
-                             "WHERE id_guide = ?;")
+                PreparedStatement deleteGuide = Database.getInstance()
+                        .getConnection()
+                        .prepareStatement(" DELETE FROM guide\n" +
+                                "WHERE id_guide = ?;")
         ) {
             System.out.println("Enter guide_id for delete:");
             printGuide();
@@ -213,13 +242,16 @@ public class GuideManager {
         }
     }
 
-
+    /**
+     * method to update find Guides By Period
+     */
     public static void findGuidesByPeriod() {
         System.out.println("===================GUIDE's working hours====================");
         try (PreparedStatement getStatisticsForGuide = Database.getInstance()
                 .getConnection()
                 .prepareStatement("select  g.firstname,g.lastname, count(s.id_excursion)," +
-                        " sec_to_time(sum(time_to_sec(s.time_end)-time_to_sec(s.time_start)))from schedules s join guide g on g.id_guide=s.id_guide " +
+                        " sec_to_time(sum(time_to_sec(s.time_end)-time_to_sec(s.time_start)))" +
+                        "from schedules s join guide g on g.id_guide=s.id_guide " +
                         "where s.time_start BETWEEN '2019-08-01 10:00:00' AND '2019-08-01 19:28:00' " +
                         "and  s.time_end BETWEEN '2019-08-01 10:00:00' AND '2019-08-01 19:28:00' " +
                         "group by s.id_guide;")
@@ -239,8 +271,9 @@ public class GuideManager {
         }
     }
 
-
-    //'2019-08-01 10:00:00'
+    /**
+     * method to find Excursions By Period
+     */
     public static void findExcursionsByPeriod() {
         System.out.println("===================Excursions Schedule====================");
         try (PreparedStatement getStatisticsForGuide = Database.getInstance()
@@ -276,6 +309,9 @@ public class GuideManager {
 
     }
 
+    /**
+     * method to find Excursion Quantity
+     */
     public static void findExcursionQuantityByPeriod() {
         System.out.println("===================Find Excuirsion Statistics====================");
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -316,9 +352,5 @@ public class GuideManager {
         }
 
     }
-
-
-
-
 
 }
