@@ -144,6 +144,30 @@ public class ExhibitManager {
         }
     }
 
+    public void createAuthor(BufferedReader reader) {
+        try (PreparedStatement addAuthor = Database.getInstance().getConnection().prepareStatement("INSERT INTO author(FIRSTNAME,LASTNAME) VALUES(?,?)")) {
+
+            System.out.println("Print First name :");
+            String newName = reader.readLine();
+            System.out.println("Print Last name :");
+            String newLastName = reader.readLine();
+            addAuthor.setString(1, newName);
+            addAuthor.setString(2, newLastName);
+            int rowsAffected = addAuthor.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Successfully added " + rowsAffected + " row");
+            } else {
+                System.out.println("Nothing was added");
+            }
+        } catch (IOException e) {
+            System.out.println("Invalid input");
+        } catch (NumberFormatException e) {
+            System.out.println("Maybe you have entered letters or space somewhere");
+        } catch (SQLException e) {
+            System.out.println("Database fail. Author is not added");
+        }
+    }
+
     public void updateAuthor(BufferedReader reader) {
         printAuthors();
         System.out.println("select Author ID to update");
@@ -169,6 +193,47 @@ public class ExhibitManager {
         } catch (SQLException e) {
             System.out.println("Database fail");
         }
+    }
 
+    public void deleteAuthor(BufferedReader reader) {
+        printAuthors();
+        System.out.println("select Author ID to delete");
+        try (PreparedStatement deleteAuthor = Database.getInstance().getConnection().prepareStatement("DELETE FROM author WHERE id_author =?")) {
+            int authorId = Integer.parseInt(reader.readLine());
+            deleteAuthor.setInt(1, authorId);
+            int rowsAffected = deleteAuthor.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Successfully updated " + rowsAffected + " row");
+            } else {
+                System.out.println("Nothing was updated");
+            }
+        } catch (IOException e) {
+            System.out.println("Invalid input");
+        } catch (NumberFormatException e) {
+            System.out.println("Maybe you have entered letters or space somewhere");
+        } catch (SQLException e) {
+            System.out.println("Database fail");
+        }
+    }
+
+    public void deleteExhibit(BufferedReader reader) {
+        printExhibit();
+        System.out.println("select exhibit ID to delete");
+        try (PreparedStatement deleteExhibit = Database.getInstance().getConnection().prepareStatement("DELETE FROM exhibit WHERE id_exhibit =?")) {
+            int exhibitId = Integer.parseInt(reader.readLine());
+            deleteExhibit.setInt(1, exhibitId);
+            int rowsAffected = deleteExhibit.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Successfully deleted " + rowsAffected + " row");
+            } else {
+                System.out.println("Nothing was deleted");
+            }
+        } catch (IOException e) {
+            System.out.println("Invalid input");
+        } catch (NumberFormatException e) {
+            System.out.println("Maybe you have entered letters or space somewhere");
+        } catch (SQLException e) {
+            System.out.println("Database fail");
+        }
     }
 }
