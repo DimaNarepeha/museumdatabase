@@ -17,9 +17,6 @@ public class GuideManager {
         PreparedStatement pstmt = conn.prepareStatement(query);
         ResultSet rs = pstmt.executeQuery();
         while (rs.next()) {
-
-
-
             System.out.println(
                     "ID: " + rs.getInt("id_guide") + "\t" +
                             "First Name: " + rs.getString("firstname") + "\t" +
@@ -102,7 +99,51 @@ public class GuideManager {
             e.printStackTrace();
         }
     }
+    public static void addPosition() throws SQLException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        try (PreparedStatement insertToPosition = Database.getInstance()
+                .getConnection()
+                .prepareStatement("INSERT INTO guide_position( position_name)" +
+                        "VALUES(?)")
+        ) {
+             printPositions();
+            System.out.println("Please Enter position");
+            String position = bufferedReader.readLine();
 
+            insertToPosition.setString(1, position);
+
+            insertToPosition.execute();
+            System.out.println("Successfully added new position: " + position);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void updatePosition() throws SQLException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        try (PreparedStatement insertToPosition = Database.getInstance()
+                .getConnection()
+                .prepareStatement("UPDATE guide_position SET position_name = ? WHERE id_guide_position=?")
+        ) {
+
+            printPositions();
+            System.out.println("Enter position for update:");
+            int positionId = Integer.parseInt(bufferedReader.readLine());
+            printPositions();
+            System.out.println("Please Enter position");
+            String position = bufferedReader.readLine();
+            insertToPosition.setString(1, position);
+            insertToPosition.setInt(2, positionId);
+            insertToPosition.execute();
+            System.out.println("Successfully added new position: " + position);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public static void updateGuide(){
@@ -139,6 +180,30 @@ public class GuideManager {
     }
 
     }
+
+    public static void deleteGuide(){
+
+        System.out.println("===================Delete Guide====================");
+        try (  BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+               PreparedStatement deleteGuide = Database.getInstance()
+                       .getConnection()
+                       .prepareStatement(" DELETE FROM guide\n" +
+                               "WHERE id_guide = ?;")
+        ){
+            System.out.println("Enter guide for delete:");
+            printGuide();
+            int guideId = Integer.parseInt(bufferedReader.readLine());
+            deleteGuide.setInt(1,guideId);
+            deleteGuide.executeUpdate();
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
      public static void findGuidesByPeriod(){
          System.out.println("===================GUIDE's working hours====================");
          //BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -164,48 +229,77 @@ public class GuideManager {
                  e.printStackTrace();
              }
      }
+
+
+     //'2019-08-01 10:00:00'
     public static void findExcursionsByPeriod(){
         System.out.println("===================Excursions Schedule====================");
         try (PreparedStatement getStatisticsForGuide = Database.getInstance()
                 .getConnection()
                 .prepareStatement("select e.excursion_name,s.time_start " +
                         "from excursions e  join schedules s on e.id_excursion=s.id_excursion " +
-                        "where s.time_start BETWEEN '2019-08-01 10:00:00' AND '2019-08-01 13:28:00';")
+                        "where s.time_start BETWEEN ? AND ?;");
+             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))
         ){
 
+            System.out.println("Enter data when excursion started:");
+            System.out.println("Possible date format:\n 2019-12-01 12:00");
+            String date_start = bufferedReader.readLine();
+            System.out.println("Enter data when excursion ended:");
+            String date_end = bufferedReader.readLine();
+            getStatisticsForGuide.setString(1,date_start+":00");
+            getStatisticsForGuide.setString(2,date_end+":00");
             ResultSet resultSet = getStatisticsForGuide.executeQuery();
-            while (resultSet.next()) {
 
+
+           int count=0;
+            while (resultSet.next()) {
+                count++;
                 System.out.println("Excursion name : " + resultSet.getString(1));
                 System.out.println("Begins at : " + resultSet.getString(2));
                 System.out.println("=================");
             }
+            if(count==0) System.out.println("No data found!!!!");
 
-
-        }catch (SQLException e) {
-            e.printStackTrace();
+        }catch (SQLException | IOException e) {
+            System.out.println("It looks like you entered date wrong...");
         }
 
     }
 
-    public static void deleteGuide(){
-
-        System.out.println("===================Excursions Schedule====================");
+    public static void findExcursionQuantityByPeriod(){
+        System.out.println("===================Find Excuirsion Statistics====================");
         try (  BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-               PreparedStatement deleteGuide = Database.getInstance()
-                .getConnection()
-                .prepareStatement(" DELETE FROM guide\n" +
-                        "WHERE id_guide = ?;")
+               PreparedStatement excursionStatistics = Database.getInstance()
+                       .getConnection()
+                       .prepareStatement(
+                               "select e.excursion_name, count(s.id_excursion),s.time_start from excursions e join schedules s \n" +
+                               "on s.id_excursion=e.id_excursion where s.time_start BETWEEN ? AND ?\n" +
+                               " and s.time_end BETWEEN ? AND ? group by e.excursion_name;")
         ){
-            System.out.println("Enter guide for delete:");
-            printGuide();
-            int guideId = Integer.parseInt(bufferedReader.readLine());
-            deleteGuide.setInt(1,guideId);
-            deleteGuide.executeUpdate();
+
+            System.out.println("Enter data when excursion started:");
+            System.out.println("Possible date format:\n 2019-12-01 12:00");
+            String date_start = bufferedReader.readLine();
+            System.out.println("Enter data when excursion ended:");
+            String date_end = bufferedReader.readLine();
+            excursionStatistics.setString(1,date_start+":00");
+            excursionStatistics.setString(2,date_end+":00");
+            excursionStatistics.setString(3,date_start+":00");
+            excursionStatistics.setString(4,date_end+":00");
+            ResultSet resultSet = excursionStatistics.executeQuery();
 
 
-
+            int count=0;
+            while (resultSet.next()) {
+                count++;
+                System.out.println("Excursion name : " + resultSet.getString(1));
+                System.out.println("Total quantity : " + resultSet.getString(2));
+                System.out.println("Time start : " + resultSet.getString(3));
+                System.out.println("=================");
+            }
+            if(count==0) System.out.println("No data found!!!!");
         }catch (SQLException e) {
             e.printStackTrace();
         }catch (IOException e) {
@@ -214,6 +308,10 @@ public class GuideManager {
 
 
     }
+
+
+
+
 
 
 }

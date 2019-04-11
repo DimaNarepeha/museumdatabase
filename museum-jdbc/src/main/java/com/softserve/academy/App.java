@@ -1,28 +1,32 @@
 package com.softserve.academy;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * Hello world!
  *
  */
-public class App 
-{
+public class App {
 
     static Connection conn;
-    public static void main( String[] args ) throws SQLException {
-        GuideManager.deleteGuide();
-      //  Database database=Database.getInstance();
-       //GuideManager.updateGuide();
-        GuideManager.printGuide();
-      /*  GuideManager.findGuidesByPeriod();
-        GuideManager.findExcursionsByPeriod();
-            /* GuideManager.printGuide();
-             GuideManager.printPositions();
-             GuideManager.printSchedule();*/
-          /*   GuideManager.printExcursions();
-             GuideManager.addGuide();*/
+
+    public static void main(String[] args) throws SQLException {
+        Database database = Database.getInstance();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+      //  GuideManager.addPosition();
+        GuideManager.updatePosition();
+        GuideManager.printPositions();
+
+    }
+
+    public static void printMenu() {
+        System.out.println("1.CREATE(write data)\n"
+                + "2.READ\n"
+                + "3.UPDATE\n"
+                + "4.DELETE");
+
     }
 }
