@@ -1,13 +1,22 @@
+/*
+ *Open source project
+ * 2019
+ */
 package com.softserve.academy;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * This class represents DAO
+ */
 public class ExhibitManager {
+    /**
+     * method to print Exhibit from a database
+     */
     public static void printExhibit() {
         try (PreparedStatement selectFromExhibit = Database.getInstance()
                 .getConnection()
@@ -37,6 +46,11 @@ public class ExhibitManager {
 
     }
 
+    /**
+     * method to print Exhibits
+     *
+     * @param bufferedReader to read input stream
+     */
     public static void createExhibit(BufferedReader bufferedReader) {
         printAuthors();
         printHalls();
@@ -87,6 +101,11 @@ public class ExhibitManager {
         }
     }
 
+    /**
+     * method to print Exhibits by Author
+     *
+     * @param reader to read input stream
+     */
     public static void printExhibitByAuthor(BufferedReader reader) {
         printAuthors();
         System.out.println("Please select author by id");
@@ -117,6 +136,9 @@ public class ExhibitManager {
         }
     }
 
+    /**
+     * method to print Halls
+     */
     public static void printHalls() {
         try (PreparedStatement selectFromHalls = Database.getInstance().getConnection().prepareStatement("SELECT * FROM hall")) {
             ResultSet resultSet = selectFromHalls.executeQuery();
@@ -131,6 +153,9 @@ public class ExhibitManager {
         }
     }
 
+    /**
+     * method to print Authors
+     */
     public static void printAuthors() {
         try (PreparedStatement selectFromHalls = Database.getInstance().getConnection().prepareStatement("SELECT * FROM author")) {
             ResultSet resultSet = selectFromHalls.executeQuery();
@@ -146,6 +171,9 @@ public class ExhibitManager {
         }
     }
 
+    /**
+     * method to print Techniques
+     */
     public static void printTechnique() {
         try (PreparedStatement selectFromHalls = Database.getInstance().getConnection().prepareStatement("SELECT * FROM technique")) {
             ResultSet resultSet = selectFromHalls.executeQuery();
@@ -160,6 +188,9 @@ public class ExhibitManager {
         }
     }
 
+    /**
+     * method to print Materials
+     */
     public static void printMaterial() {
         try (PreparedStatement selectFromHalls = Database.getInstance().getConnection().prepareStatement("SELECT * FROM material")) {
             ResultSet resultSet = selectFromHalls.executeQuery();
@@ -174,6 +205,11 @@ public class ExhibitManager {
         }
     }
 
+    /**
+     * method to create author
+     *
+     * @param reader to read input stream
+     */
     public static void createAuthor(BufferedReader reader) {
         try (PreparedStatement addAuthor = Database.getInstance().getConnection().prepareStatement("INSERT INTO author(FIRSTNAME,LASTNAME) VALUES(?,?)")) {
 
@@ -198,6 +234,11 @@ public class ExhibitManager {
         }
     }
 
+    /**
+     * method to update author
+     *
+     * @param reader to read input stream
+     */
     public static void updateAuthor(BufferedReader reader) {
         printAuthors();
         System.out.println("select Author ID to update");
@@ -225,6 +266,11 @@ public class ExhibitManager {
         }
     }
 
+    /**
+     * method to delete author
+     *
+     * @param reader to read input stream
+     */
     public static void deleteAuthor(BufferedReader reader) {
         printAuthors();
         System.out.println("select Author ID to delete");
@@ -246,6 +292,11 @@ public class ExhibitManager {
         }
     }
 
+    /**
+     * method to delete exhibit
+     *
+     * @param reader to read input stream
+     */
     public static void deleteExhibit(BufferedReader reader) {
         printExhibit();
         System.out.println("select exhibit ID to delete");
