@@ -13,8 +13,16 @@ public class App
 
     static Connection conn;
     public static void main( String[] args ) throws SQLException {
-        Database database=Database.getInstance();
-
-        
+        GuideManager.deleteGuide();
+      //  Database database=Database.getInstance();
+       //GuideManager.updateGuide();
+        GuideManager.printGuide();
+      /*  GuideManager.findGuidesByPeriod();
+        GuideManager.findExcursionsByPeriod();
+            /* GuideManager.printGuide();
+             GuideManager.printPositions();
+             GuideManager.printSchedule();*/
+          /*   GuideManager.printExcursions();
+             GuideManager.addGuide();*/
     }
 }
