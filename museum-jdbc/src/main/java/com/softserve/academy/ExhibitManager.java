@@ -130,7 +130,7 @@ public class ExhibitManager {
                 System.out.println("===============");
                 wasInWhileLoop=true;
             }
-            if(wasInWhileLoop){
+            if(!wasInWhileLoop){
                 System.out.println("No exhibits with this author");
             }
             resultSet.close();
