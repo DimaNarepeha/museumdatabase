@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0b49b78d-3bcc-4b73-8581-3b9491404f67" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="366">
+              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,8 +91,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/Database.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java" />
       </list>
     </option>
   </component>
@@ -213,12 +212,12 @@
       <workItem from="1554895152682" duration="5446000" />
       <workItem from="1554970123839" duration="392000" />
       <workItem from="1554972018320" duration="2519000" />
-      <workItem from="1554986245315" duration="2417000" />
+      <workItem from="1554986245315" duration="2754000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11060000" />
+    <option name="totallyTimeSpent" value="11397000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -339,8 +338,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="366">
+          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
