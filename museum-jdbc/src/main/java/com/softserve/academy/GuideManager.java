@@ -126,6 +126,34 @@ public class GuideManager {
         }
     }
 
+    public static void updatePosition(BufferedReader bufferedReader) {
+        try (PreparedStatement updateGuide = Database.getInstance()
+                .getConnection()
+                .prepareStatement("UPDATE guide_position SET position_name = ?  WHERE id_guide_position=?")
+        ){
+            System.out.println("===================UPDATE Position====================");
+            printPositions();
+            System.out.println("Enter position id for update:");
+            int positionId = Integer.parseInt(bufferedReader.readLine());
+            System.out.println("Enter position name");
+            String positionName = bufferedReader.readLine();
+            updateGuide.setInt(2, positionId);
+            updateGuide.setString(1, positionName);
+            int rowsAffected = updateGuide.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Successfully updated " + rowsAffected + " row");
+            } else {
+                System.out.println("Nothing was updated");
+            }
+
+        }catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("Database fail");
+        }
+
+    }
+
     public static void updateGuide(BufferedReader bufferedReader) {
 
         try (PreparedStatement updateGuide = Database.getInstance()

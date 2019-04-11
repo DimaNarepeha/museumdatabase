@@ -143,7 +143,8 @@ public class App {
 
     public static void updateMenu(BufferedReader bufferedReader) throws IOException, NumberFormatException {
         System.out.println("1.Update authors\n"
-                + "2.Update guides\n");
+                + "2.Update guides\n" +
+                "3.Update position\n");
 
         int input = Integer.parseInt(bufferedReader.readLine());
         switch (input) {
@@ -152,6 +153,9 @@ public class App {
                 break;
             case 2:
                 GuideManager.updateGuide(bufferedReader);
+                break;
+            case 3:
+                GuideManager.updatePosition(bufferedReader);
                 break;
             default:
                 System.out.println("Invalid number.");
