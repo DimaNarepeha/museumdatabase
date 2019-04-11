@@ -1,5 +1,4 @@
 package com.softserve.academy;
-package com.softserve.academy;
 
 import java.io.BufferedReader;
 import java.io.IOException;
