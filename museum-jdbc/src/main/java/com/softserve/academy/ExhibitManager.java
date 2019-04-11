@@ -79,9 +79,11 @@ public class ExhibitManager {
             insertToAuthor_Exhibit.execute();
             System.out.println("Successfully added new exhibit " + exhibitName);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Invalid input");
+        } catch (NumberFormatException e) {
+            System.out.println("Maybe you have entered letters or space somewhere");
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Database fail");
         }
     }
 
@@ -140,5 +142,33 @@ public class ExhibitManager {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void updateAuthor(BufferedReader reader) {
+        printAuthors();
+        System.out.println("select Author ID to update");
+        try (PreparedStatement updateAuthor = Database.getInstance().getConnection().prepareStatement("UPDATE author SET FIRSTNAME = ?, LASTNAME = ? WHERE id_author= ?")) {
+            int authorId = Integer.parseInt(reader.readLine());
+            System.out.println("Print new First name :");
+            String newName = reader.readLine();
+            System.out.println("Print new Last name :");
+            String newLastName = reader.readLine();
+            updateAuthor.setString(1, newName);
+            updateAuthor.setString(2, newLastName);
+            updateAuthor.setInt(3, authorId);
+            int rowsAffected = updateAuthor.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Successfully updated " + rowsAffected + " row");
+            } else {
+                System.out.println("Nothing was updated");
+            }
+        } catch (IOException e) {
+            System.out.println("Invalid input");
+        } catch (NumberFormatException e) {
+            System.out.println("Maybe you have entered letters or space somewhere");
+        } catch (SQLException e) {
+            System.out.println("Database fail");
+        }
+
     }
 }
