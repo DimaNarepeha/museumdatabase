@@ -133,15 +133,18 @@ public class GuideManager {
         ) {
 
             printPositions();
-            System.out.println("Enter position for update:");
+            System.out.println("Enter position id for update:");
             int positionId = Integer.parseInt(bufferedReader.readLine());
-            printPositions();
-            System.out.println("Please Enter position");
+            System.out.println("Please Enter position name");
             String position = bufferedReader.readLine();
             insertToPosition.setString(1, position);
             insertToPosition.setInt(2, positionId);
-            insertToPosition.execute();
-            System.out.println("Successfully added new position: " + position);
+            int rowsAffected = insertToPosition.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Successfully updated " + rowsAffected + " row");
+            } else {
+                System.out.println("Nothing was updated");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -158,7 +161,7 @@ public class GuideManager {
         )
         {
             System.out.println("===================UPDATE GUIDE====================");
-            System.out.println("Enter guide for update:");
+            System.out.println("Enter guide id for update:");
             printGuide();
             int guideId = Integer.parseInt(bufferedReader.readLine());
             printPositions();
