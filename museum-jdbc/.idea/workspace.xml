@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0b49b78d-3bcc-4b73-8581-3b9491404f67" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,16 +13,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+            <state relative-caret-position="361">
+              <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
+            <state relative-caret-position="-1258">
+              <caret line="148" column="129" selection-start-line="148" selection-start-column="120" selection-end-line="148" selection-end-column="129" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,6 +81,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <replaceStrings>
+      <replace>System.out.println(&quot;&quot;);</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -212,12 +217,12 @@
       <workItem from="1554895152682" duration="5446000" />
       <workItem from="1554970123839" duration="392000" />
       <workItem from="1554972018320" duration="2519000" />
-      <workItem from="1554986245315" duration="2754000" />
+      <workItem from="1554986245315" duration="6195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11397000" />
+    <option name="totallyTimeSpent" value="14838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -232,7 +237,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32792208" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32792208" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -264,13 +269,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java</url>
-          <line>71</line>
+          <line>70</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java</url>
-          <line>212</line>
+          <line>211</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -328,8 +333,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
+        <state relative-caret-position="-1258">
+          <caret line="148" column="129" selection-start-line="148" selection-start-column="120" selection-end-line="148" selection-end-column="129" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -338,8 +343,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+        <state relative-caret-position="361">
+          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

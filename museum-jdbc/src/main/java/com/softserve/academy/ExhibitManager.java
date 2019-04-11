@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ExhibitManager {
-    public void printExhibit() {
+    public static void printExhibit() {
         try (PreparedStatement selectFromExhibit = Database.getInstance()
                 .getConnection()
                 .prepareStatement("SELECT exhibit_name, hall_name, FIRSTNAME, LASTNAME, material_name, technique_name FROM exhibit\n" +
@@ -36,8 +36,7 @@ public class ExhibitManager {
 
     }
 
-    public void addExhibit() {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    public static void createExhibit(BufferedReader bufferedReader) {
         printAuthors();
         printHalls();
         printMaterial();
@@ -87,7 +86,7 @@ public class ExhibitManager {
         }
     }
 
-    public void printExhibitByAuthor(BufferedReader reader) {
+    public static void printExhibitByAuthor(BufferedReader reader) {
         printAuthors();
         System.out.println("Please select author by id");
         try (PreparedStatement selectFromExhibit = Database.getInstance().getConnection().prepareStatement("SELECT exhibit_name, hall_name, FIRSTNAME, LASTNAME, material_name, technique_name FROM exhibit" +
@@ -113,11 +112,11 @@ public class ExhibitManager {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("No exhibits with this author");
         }
     }
 
-    public void printHalls() {
+    public static void printHalls() {
         try (PreparedStatement selectFromHalls = Database.getInstance().getConnection().prepareStatement("SELECT * FROM hall")) {
             ResultSet resultSet = selectFromHalls.executeQuery();
             while (resultSet.next()) {
@@ -131,7 +130,7 @@ public class ExhibitManager {
         }
     }
 
-    public void printAuthors() {
+    public static void printAuthors() {
         try (PreparedStatement selectFromHalls = Database.getInstance().getConnection().prepareStatement("SELECT * FROM author")) {
             ResultSet resultSet = selectFromHalls.executeQuery();
             while (resultSet.next()) {
@@ -146,7 +145,7 @@ public class ExhibitManager {
         }
     }
 
-    public void printTechnique() {
+    public static void printTechnique() {
         try (PreparedStatement selectFromHalls = Database.getInstance().getConnection().prepareStatement("SELECT * FROM technique")) {
             ResultSet resultSet = selectFromHalls.executeQuery();
             while (resultSet.next()) {
@@ -160,7 +159,7 @@ public class ExhibitManager {
         }
     }
 
-    public void printMaterial() {
+    public static void printMaterial() {
         try (PreparedStatement selectFromHalls = Database.getInstance().getConnection().prepareStatement("SELECT * FROM material")) {
             ResultSet resultSet = selectFromHalls.executeQuery();
             while (resultSet.next()) {
@@ -174,7 +173,7 @@ public class ExhibitManager {
         }
     }
 
-    public void createAuthor(BufferedReader reader) {
+    public static void createAuthor(BufferedReader reader) {
         try (PreparedStatement addAuthor = Database.getInstance().getConnection().prepareStatement("INSERT INTO author(FIRSTNAME,LASTNAME) VALUES(?,?)")) {
 
             System.out.println("Print First name :");
@@ -185,7 +184,7 @@ public class ExhibitManager {
             addAuthor.setString(2, newLastName);
             int rowsAffected = addAuthor.executeUpdate();
             if (rowsAffected > 0) {
-                System.out.println("Successfully added " + rowsAffected + " row");
+                System.out.println("Successfully added " + newName + " " + newLastName);
             } else {
                 System.out.println("Nothing was added");
             }
@@ -198,7 +197,7 @@ public class ExhibitManager {
         }
     }
 
-    public void updateAuthor(BufferedReader reader) {
+    public static void updateAuthor(BufferedReader reader) {
         printAuthors();
         System.out.println("select Author ID to update");
         try (PreparedStatement updateAuthor = Database.getInstance().getConnection().prepareStatement("UPDATE author SET FIRSTNAME = ?, LASTNAME = ? WHERE id_author= ?")) {
@@ -225,7 +224,7 @@ public class ExhibitManager {
         }
     }
 
-    public void deleteAuthor(BufferedReader reader) {
+    public static void deleteAuthor(BufferedReader reader) {
         printAuthors();
         System.out.println("select Author ID to delete");
         try (PreparedStatement deleteAuthor = Database.getInstance().getConnection().prepareStatement("DELETE FROM author WHERE id_author =?")) {
@@ -246,7 +245,7 @@ public class ExhibitManager {
         }
     }
 
-    public void deleteExhibit(BufferedReader reader) {
+    public static void deleteExhibit(BufferedReader reader) {
         printExhibit();
         System.out.println("select exhibit ID to delete");
         try (PreparedStatement deleteExhibit = Database.getInstance().getConnection().prepareStatement("DELETE FROM exhibit WHERE id_exhibit =?")) {
