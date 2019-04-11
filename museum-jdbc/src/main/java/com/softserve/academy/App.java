@@ -61,8 +61,8 @@ public class App {
 
     public static void createMenu(BufferedReader bufferedReader) throws IOException, NumberFormatException {
         System.out.println("1.Create new exhibit\n"
-                + "2.Create new author");
-        System.out.println("3.Create new guide\n"
+                + "2.Create new author\n"
+                + "3.Create new guide\n"
                 + "4.Create new position");
         int input = Integer.parseInt(bufferedReader.readLine());
         switch (input) {
@@ -90,8 +90,8 @@ public class App {
                 + "3.Print authors\n"
                 + "4.Print halls\n"
                 + "5.Print techniques\n"
-                + "6.Print materials");
-        System.out.println("7.Print schedule\n"
+                + "6.Print materials\n"
+                + "7.Print schedule\n"
                 + "8.Print positions\n"
                 + "9.Print guides\n"
                 + "10.Print excursions for certain period\n"
@@ -142,18 +142,18 @@ public class App {
     }
 
     public static void updateMenu(BufferedReader bufferedReader) throws IOException, NumberFormatException {
-        System.out.println("1.Update authors\n");
-        System.out.println("2.Update guides\n");
-        System.out.println("2.Update positions\n");
+        System.out.println("1.Update authors\n"
+                + "2.Update guides\n"
+                + "3.Update positions\n");
         int input = Integer.parseInt(bufferedReader.readLine());
         switch (input) {
             case 1:
                 ExhibitManager.updateAuthor(bufferedReader);
                 break;
-            case 1:
+            case 2:
                 GuideManager.updateGuide();
                 break;
-            case 2:
+            case 3:
                 GuideManager.updatePosition();
                 break;
             default:

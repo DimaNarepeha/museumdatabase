@@ -113,11 +113,9 @@ public class GuideManager {
                         "VALUES(?)")
         ) {
             printPositions();
-            System.out.println("Please Enter position");
+            System.out.println("Please Enter new position");
             String position = bufferedReader.readLine();
-
             insertToPosition.setString(1, position);
-
             insertToPosition.execute();
             System.out.println("Successfully added new position: " + position);
         } catch (IOException e) {
