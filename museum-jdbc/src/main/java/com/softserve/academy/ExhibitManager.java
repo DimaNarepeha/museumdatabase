@@ -11,7 +11,7 @@ public class ExhibitManager {
     public static void printExhibit() {
         try (PreparedStatement selectFromExhibit = Database.getInstance()
                 .getConnection()
-                .prepareStatement("SELECT exhibit_name, hall_name, FIRSTNAME, LASTNAME, material_name, technique_name FROM exhibit\n" +
+                .prepareStatement("SELECT exhibit_name, hall_name, FIRSTNAME, LASTNAME, material_name, technique_name,exhibit.id_exhibit FROM exhibit\n" +
                         "INNER JOIN hall ON hall.id_hall=exhibit.id_hall\n" +
                         "INNER JOIN material ON material.id_material=exhibit.id_material\n" +
                         "INNER JOIN technique ON technique.id_technique=exhibit.id_technique\n" +
@@ -21,6 +21,7 @@ public class ExhibitManager {
             System.out.println("Exhibits: ");
 
             while (resultSet.next()) {
+                System.out.println("Exhibit Id : " + resultSet.getInt(7));
                 System.out.println("Exhibit : " + resultSet.getString(1));
                 System.out.println("Hall : " + resultSet.getString(2));
                 System.out.println("Author : " + resultSet.getString(3)
@@ -89,7 +90,7 @@ public class ExhibitManager {
     public static void printExhibitByAuthor(BufferedReader reader) {
         printAuthors();
         System.out.println("Please select author by id");
-        try (PreparedStatement selectFromExhibit = Database.getInstance().getConnection().prepareStatement("SELECT exhibit_name, hall_name, FIRSTNAME, LASTNAME, material_name, technique_name FROM exhibit" +
+        try (PreparedStatement selectFromExhibit = Database.getInstance().getConnection().prepareStatement("SELECT  exhibit_name, hall_name, FIRSTNAME, LASTNAME, material_name, technique_name FROM exhibit" +
                 "INNER JOIN hall ON hall.id_hall=exhibit.id_hall" +
                 "INNER JOIN material ON material.id_material=exhibit.id_material" +
                 "INNER JOIN technique ON technique.id_technique=exhibit.id_technique" +
@@ -232,9 +233,9 @@ public class ExhibitManager {
             deleteAuthor.setInt(1, authorId);
             int rowsAffected = deleteAuthor.executeUpdate();
             if (rowsAffected > 0) {
-                System.out.println("Successfully updated " + rowsAffected + " row");
+                System.out.println("Successfully deleted " + rowsAffected + " row");
             } else {
-                System.out.println("Nothing was updated");
+                System.out.println("Nothing was deleted");
             }
         } catch (IOException e) {
             System.out.println("Invalid input");
@@ -248,12 +249,15 @@ public class ExhibitManager {
     public static void deleteExhibit(BufferedReader reader) {
         printExhibit();
         System.out.println("select exhibit ID to delete");
-        try (PreparedStatement deleteExhibit = Database.getInstance().getConnection().prepareStatement("DELETE FROM exhibit WHERE id_exhibit =?")) {
+        try (PreparedStatement deleteExhibit = Database.getInstance().getConnection().prepareStatement("DELETE FROM exhibit WHERE id_exhibit = ?");
+             PreparedStatement delete_author_exhibit = Database.getInstance().getConnection().prepareStatement("DELETE FROM author_exhibit WHERE id_exhibit = ?")) {
             int exhibitId = Integer.parseInt(reader.readLine());
             deleteExhibit.setInt(1, exhibitId);
+            delete_author_exhibit.setInt(1, exhibitId);
+            delete_author_exhibit.execute();
             int rowsAffected = deleteExhibit.executeUpdate();
             if (rowsAffected > 0) {
-                System.out.println("Successfully deleted " + rowsAffected + " row");
+                System.out.println("Successfully deleted " + rowsAffected + " exhibit");
             } else {
                 System.out.println("Nothing was deleted");
             }
