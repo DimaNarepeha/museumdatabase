@@ -87,6 +87,36 @@ public class ExhibitManager {
         }
     }
 
+    public void printExhibitByAuthor(BufferedReader reader) {
+        printAuthors();
+        System.out.println("Please select author by id");
+        try (PreparedStatement selectFromExhibit = Database.getInstance().getConnection().prepareStatement("SELECT exhibit_name, hall_name, FIRSTNAME, LASTNAME, material_name, technique_name FROM exhibit" +
+                "INNER JOIN hall ON hall.id_hall=exhibit.id_hall" +
+                "INNER JOIN material ON material.id_material=exhibit.id_material" +
+                "INNER JOIN technique ON technique.id_technique=exhibit.id_technique" +
+                "INNER JOIN author_exhibit ON author_exhibit.id_exhibit=exhibit.id_exhibit" +
+                "INNER JOIN author ON author.id_author=author_exhibit.id_author" +
+                "WHERE author.id_author=?;")) {
+            int authorId = Integer.parseInt(reader.readLine());
+            selectFromExhibit.setInt(1, authorId);
+            ResultSet resultSet = selectFromExhibit.executeQuery();
+            while (resultSet.next()) {
+                System.out.println("Exhibit : " + resultSet.getString(1));
+                System.out.println("Hall : " + resultSet.getString(2));
+                System.out.println("Author : " + resultSet.getString(3)
+                        + " " + resultSet.getString(4));
+                System.out.println("Material : " + resultSet.getString(5));
+                System.out.println("Technique : " + resultSet.getString(6));
+                System.out.println("===============");
+            }
+            resultSet.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void printHalls() {
         try (PreparedStatement selectFromHalls = Database.getInstance().getConnection().prepareStatement("SELECT * FROM hall")) {
             ResultSet resultSet = selectFromHalls.executeQuery();

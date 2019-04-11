@@ -16,7 +16,7 @@ public class App {
     public static void main(String[] args) throws SQLException {
         Database database = Database.getInstance();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        new ExhibitManager().updateAuthor(bufferedReader);
+
 
 
     }
