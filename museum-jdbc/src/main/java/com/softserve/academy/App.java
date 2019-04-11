@@ -19,7 +19,6 @@ public class App {
         while (menu(bufferedReader)) {
             continue;
         }
-
     }
 
     public static boolean menu(BufferedReader bufferedReader) {
