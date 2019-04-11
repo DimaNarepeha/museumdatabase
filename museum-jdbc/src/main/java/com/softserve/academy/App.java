@@ -62,6 +62,8 @@ public class App {
     public static void createMenu(BufferedReader bufferedReader) throws IOException, NumberFormatException {
         System.out.println("1.Create new exhibit\n"
                 + "2.Create new author");
+        System.out.println("3.Create new guide\n"
+                + "4.Create new position");
         int input = Integer.parseInt(bufferedReader.readLine());
         switch (input) {
             case 1:
@@ -69,6 +71,12 @@ public class App {
                 break;
             case 2:
                 ExhibitManager.createAuthor(bufferedReader);
+                break;
+            case 3:
+                GuideManager.addGuide();
+                break;
+            case 4:
+                GuideManager.addPosition();
                 break;
             default:
                 System.out.println("Invalid number.");
@@ -83,6 +91,12 @@ public class App {
                 + "4.Print halls\n"
                 + "5.Print techniques\n"
                 + "6.Print materials");
+        System.out.println("7.Print schedule\n"
+                + "8.Print positions\n"
+                + "9.Print guides\n"
+                + "10.Print excursions for certain period\n"
+                + "11.Print guides available for certain period\n"
+                + "12.Print excursion statistics for certain period");
         int input = Integer.parseInt(bufferedReader.readLine());
         switch (input) {
             case 1:
@@ -103,6 +117,24 @@ public class App {
             case 6:
                 ExhibitManager.printMaterial();
                 break;
+            case 7:
+                GuideManager.printSchedule();
+                break;
+            case 8:
+                GuideManager.printPositions();
+                break;
+            case 9:
+                GuideManager.printGuide();
+                break;
+            case 10:
+                GuideManager.findExcursionsByPeriod();
+                break;
+            case 11:
+                GuideManager.findGuidesByPeriod();
+                break;
+            case 12:
+                GuideManager.findExcursionQuantityByPeriod();
+                break;
             default:
                 System.out.println("Invalid number.");
                 menu(bufferedReader);
@@ -111,10 +143,18 @@ public class App {
 
     public static void updateMenu(BufferedReader bufferedReader) throws IOException, NumberFormatException {
         System.out.println("1.Update authors\n");
+        System.out.println("2.Update guides\n");
+        System.out.println("2.Update positions\n");
         int input = Integer.parseInt(bufferedReader.readLine());
         switch (input) {
             case 1:
                 ExhibitManager.updateAuthor(bufferedReader);
+                break;
+            case 1:
+                GuideManager.updateGuide();
+                break;
+            case 2:
+                GuideManager.updatePosition();
                 break;
             default:
                 System.out.println("Invalid number.");
