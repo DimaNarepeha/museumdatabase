@@ -266,7 +266,7 @@ public class GuideManager {
                 System.out.println("=================");
             }
             if (count == 0) System.out.println("No data found!!!!");
-
+            resultSet.close();
         } catch (SQLException | IOException e) {
             System.out.println("It looks like you entered date wrong...");
         }

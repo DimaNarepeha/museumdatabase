@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0b49b78d-3bcc-4b73-8581-3b9491404f67" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/JDBCLearning.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="169">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,22 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4343">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            <state relative-caret-position="345">
+              <caret line="269" column="35" selection-start-line="269" selection-start-column="35" selection-end-line="269" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
               <caret line="132" column="16" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="16" />
               <folding>
-                <element signature="e#0#13511#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -72,7 +67,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
+            <state relative-caret-position="1258">
               <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
             </state>
           </provider>
@@ -103,10 +98,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/Database.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java" />
       </list>
     </option>
   </component>
@@ -127,7 +122,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,15 +161,11 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="JDBCLearning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="museum-jdbc" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -203,7 +193,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JAR Application.JDBCLearning-1.0-SNAPSHOT.jar">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.softserve.academy.App" />
       <module name="JDBCLearning" />
@@ -231,8 +221,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.JDBCLearning-1.0-SNAPSHOT.jar" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JAR Application.JDBCLearning-1.0-SNAPSHOT.jar" />
         <item itemvalue="JAR Application.JDBC_museum.jar" />
         <item itemvalue="JAR Application.JDBCmuseum.jar" />
       </list>
@@ -253,16 +243,18 @@
       <workItem from="1554970123839" duration="392000" />
       <workItem from="1554972018320" duration="2519000" />
       <workItem from="1554986245315" duration="11535000" />
+      <workItem from="1554998098134" duration="242000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20178000" />
+    <option name="totallyTimeSpent" value="20420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26279318" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26545843" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -271,7 +263,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32792208" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32792208" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -279,7 +271,7 @@
       <window_info anchor="bottom" id="CheckStyle" order="7" weight="0.32900432" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32900432" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32900432" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32900432" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
@@ -323,6 +315,20 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -338,6 +344,12 @@
           <line>119</line>
           <properties />
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -358,6 +370,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/softserve/academy/AppTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -370,34 +383,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4343">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/softserve/academy/AppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
+        <state relative-caret-position="1258">
           <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -406,9 +395,25 @@
         <state relative-caret-position="209">
           <caret line="132" column="16" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="16" />
           <folding>
-            <element signature="e#0#13511#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="269" column="35" selection-start-line="269" selection-start-column="35" selection-end-line="269" selection-end-column="35" />
         </state>
       </provider>
     </entry>
