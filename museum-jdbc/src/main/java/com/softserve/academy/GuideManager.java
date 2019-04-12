@@ -316,12 +316,12 @@ public class GuideManager {
         System.out.println("===================Find Excuirsion Statistics====================");
         try (
 
-             PreparedStatement excursionStatistics = Database.getInstance()
-                     .getConnection()
-                     .prepareStatement(
-                             "select e.excursion_name, count(s.id_excursion),s.time_start from excursions e join schedules s \n" +
-                                     "on s.id_excursion=e.id_excursion where s.time_start BETWEEN ? AND ?\n" +
-                                     " and s.time_end BETWEEN ? AND ? group by e.excursion_name;")
+                PreparedStatement excursionStatistics = Database.getInstance()
+                        .getConnection()
+                        .prepareStatement(
+                                "select e.excursion_name, count(s.id_excursion),s.time_start from excursions e join schedules s \n" +
+                                        "on s.id_excursion=e.id_excursion where s.time_start BETWEEN ? AND ?\n" +
+                                        " and s.time_end BETWEEN ? AND ? group by e.excursion_name;")
         ) {
 
             System.out.println("Enter data when excursion started:");
