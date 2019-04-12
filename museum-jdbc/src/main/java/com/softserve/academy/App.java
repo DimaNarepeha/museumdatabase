@@ -127,13 +127,13 @@ public class App {
                 GuideManager.printGuide();
                 break;
             case 10:
-                GuideManager.findExcursionsByPeriod();
+                GuideManager.findExcursionsByPeriod(bufferedReader);
                 break;
             case 11:
                 GuideManager.findGuidesByPeriod();
                 break;
             case 12:
-                GuideManager.findExcursionQuantityByPeriod();
+                GuideManager.findExcursionQuantityByPeriod(bufferedReader);
                 break;
             default:
                 System.out.println("Invalid number.");

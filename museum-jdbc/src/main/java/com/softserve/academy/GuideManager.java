@@ -274,14 +274,14 @@ public class GuideManager {
     /**
      * method to find Excursions By Period
      */
-    public static void findExcursionsByPeriod() {
+    public static void findExcursionsByPeriod(BufferedReader bufferedReader) {
         System.out.println("===================Excursions Schedule====================");
         try (PreparedStatement getStatisticsForGuide = Database.getInstance()
                 .getConnection()
                 .prepareStatement("select e.excursion_name,s.time_start " +
                         "from excursions e  join schedules s on e.id_excursion=s.id_excursion " +
                         "where s.time_start BETWEEN ? AND ?;");
-             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))
+
         ) {
 
             System.out.println("Enter data when excursion started:");
@@ -312,9 +312,9 @@ public class GuideManager {
     /**
      * method to find Excursion Quantity
      */
-    public static void findExcursionQuantityByPeriod() {
+    public static void findExcursionQuantityByPeriod(BufferedReader bufferedReader) {
         System.out.println("===================Find Excuirsion Statistics====================");
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        try (
 
              PreparedStatement excursionStatistics = Database.getInstance()
                      .getConnection()

@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8fa4e7c2-a94a-4af5-b9c1-ec10eaa4121f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/softserve/academy/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/softserve/academy/AppTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,13 +18,13 @@
     <session id="-1486309701">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="867" />
+          <entry key="java" value="876" />
           <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="866" />
+          <entry key="JAVA" value="875" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="6" />
         </counts>
@@ -43,18 +45,19 @@
         <counts>
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="146" column="39" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
+            <state relative-caret-position="124">
+              <caret line="135" column="73" selection-start-line="135" selection-start-column="73" selection-end-line="135" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,7 +73,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="136">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -82,17 +85,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1394">
-              <caret line="136" column="60" selection-start-line="136" selection-start-column="60" selection-end-line="136" selection-end-column="60" />
+            <state relative-caret-position="181">
+              <caret line="316" column="13" selection-start-line="316" selection-start-column="13" selection-end-line="316" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/softserve/academy/AppTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding>
                 <element signature="e#289#290#0" expanded="true" />
               </folding>
@@ -103,7 +106,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="748">
               <caret line="49" column="11" selection-start-line="45" selection-start-column="7" selection-end-line="49" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -115,7 +118,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
+            <state relative-caret-position="850">
               <caret line="50" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
@@ -138,10 +141,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/softserve/academy/AppTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java" />
       </list>
     </option>
   </component>
@@ -151,7 +154,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="width" value="960" />
     <option name="height" value="1032" />
   </component>
@@ -161,6 +164,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,14 +229,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555011072283" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555050502544" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../museum4/museumdatabase" />
   </component>
   <component name="RunDashboard">
@@ -246,7 +249,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest.shouldAnswerWithTrue">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.softserve.academy.App" />
       <module name="JDBCLearning" />
@@ -282,8 +285,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
       </list>
     </recent_temporary>
   </component>
@@ -304,6 +307,7 @@
       <workItem from="1554973982591" duration="6197000" />
       <workItem from="1554991604349" duration="4361000" />
       <workItem from="1555000640500" duration="1787000" />
+      <workItem from="1555050077649" duration="380000" />
     </task>
     <servers />
   </component>
@@ -313,13 +317,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10071000" />
+    <option name="totallyTimeSpent" value="10451000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27231467" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27609682" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -328,7 +332,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.51967216" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.062295083" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -399,14 +403,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideMenu.java" />
     <entry file="file://$PROJECT_DIR$/museumdatabase.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideMenu.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="146" column="39" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="49" column="11" selection-start-line="45" selection-start-column="7" selection-end-line="49" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -415,44 +429,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
+        <state relative-caret-position="850">
           <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="136" column="60" selection-start-line="136" selection-start-column="60" selection-end-line="136" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/ExhibitManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="49" column="11" selection-start-line="45" selection-start-column="7" selection-end-line="49" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/softserve/academy/AppTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding>
             <element signature="e#289#290#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/GuideManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="316" column="13" selection-start-line="316" selection-start-column="13" selection-end-line="316" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softserve/academy/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="135" column="73" selection-start-line="135" selection-start-column="73" selection-end-line="135" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
